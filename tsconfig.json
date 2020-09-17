@@ -14,10 +14,11 @@
     "resolveJsonModule": true
   },
   "include": [
-    "src/**/*", "src/cli/NewTransactionCli.test.ts"
+    "src/**/*", "src/cli/NewTransactionCli.integration.test.ts"
   ],
   "exclude": [
     "node_modules",
-    "coverage"
+    "coverage",
+    "src/**/*.test.ts"
   ]
 }

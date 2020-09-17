@@ -1,31 +1,12 @@
 import { Server, WebSocket } from 'mock-socket'
 import NewTransactionCli from './NewTransactionCli'
 
-class WebSocketExtension extends WebSocket {
-  ping () { }
-  pong () { }
-  terminate () { }
-  addListener () { }
-  removeListener () { }
-  once () { }
-  off () { }
-  removeAllListeners () { }
-  setMaxListeners () { }
-  getMaxListeners () { }
-  rawListeners () { }
-  emit () { }
-  listenerCount () { }
-  prependListener () { }
-  prependOnceListener () { }
-  eventNames () { }
-}
-
 describe('NewTransactionCli', () => {
   it('should send transactions through websocket connection', (done) => {
     const fakeURL = 'ws://localhost:8080'
     const mockServer = new Server(fakeURL)
 
-    const mockClient = new WebSocketExtension(fakeURL)
+    const mockClient = new WebSocket(fakeURL)
 
     const actualServer: any[] = []
     const expectedServer = [JSON.stringify({

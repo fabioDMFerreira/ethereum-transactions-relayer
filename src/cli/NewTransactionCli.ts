@@ -1,9 +1,11 @@
-import Websocket from 'ws'
-
+interface WebSocket {
+  onopen: (event: any) => void,
+  send: (message: string) => void
+}
 export default class NewTransactionCli {
-  ws: Websocket
+  ws: WebSocket
 
-  constructor (ws: Websocket) {
+  constructor (ws: WebSocket) {
     this.ws = ws
   }
 
