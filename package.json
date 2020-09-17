@@ -1,22 +1,32 @@
 {
-  "name": "typescript-boilerplate",
+  "name": "ethereum-transactions-relayer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "npm run build && node build/index.js",
-    "start:dev": "nodemon",
+    "service": "npm run build && node build/index.js service",
+    "service:dev": "nodemon service",
+    "cli": "npm run build && node build/index.js cli",
+    "cli:dev": "nodemon cli",
     "build": "rimraf ./build && tsc"
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "ethers": "^5.0.13",
+    "uuid": "^8.3.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
     "@types/jest": "^26.0.13",
     "@types/node": "^14.10.2",
+    "@types/uuid": "^8.3.0",
+    "@types/ws": "^7.2.6",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
     "babel-jest": "^26.3.0",
@@ -28,6 +38,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^26.4.2",
+    "mock-socket": "^9.0.3",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
